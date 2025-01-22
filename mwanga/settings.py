@@ -13,16 +13,8 @@ from pathlib import Path
 import os
 import dj_database_url
 
-from django.core.urlresolvers import resolve, Resolver404
 
 
-class CheckURLExists(object):  
-
-    def process_request(self, request):
-        try:
-            resolve(url)
-        except Resolver404:
-            return HttpResponseRedirect('some url')
 
 
 
@@ -77,8 +69,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware'
-    'middlewares.redirects.CheckURLExists',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'mwanga.urls'
