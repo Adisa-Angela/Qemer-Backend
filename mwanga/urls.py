@@ -16,8 +16,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-# from django.http import HttpResponse
-handler404 = 'api.views.my_custom_page_not_found_view'
 
 
 urlpatterns =[
